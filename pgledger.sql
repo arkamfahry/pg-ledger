@@ -5,8 +5,8 @@ CREATE OR REPLACE FUNCTION gen_ulid()
 AS
 $$
 DECLARE
-    -- Crockford's Base32
-    encoding  bytea = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+    -- Crockford's Base32 (lowercase)
+    encoding  bytea = '0123456789abcdefghjkmnpqrstvwxyz';
     timestamp bytea = E'\\000\\000\\000\\000\\000\\000';
     output    text  = '';
     unix_time bigint;
